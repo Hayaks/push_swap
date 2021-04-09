@@ -6,12 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:00:29 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/02 10:06:28 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/09 13:12:59 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
-# include "../../libft/libft.h"
-
-#endif
