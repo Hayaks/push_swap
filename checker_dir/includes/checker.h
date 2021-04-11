@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:59:57 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/08 11:29:43 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/11 23:00:24 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ typedef struct	s_push
 {
 	int				ac;
 	char			**av;
-	struct s_pile	*first_a;
-	struct s_pile	*last_a;
-	struct s_pile	*first_b;
-	struct s_pile	*last_b;
+	struct s_list	*first_a;
+	struct s_list	*last_a;
+	struct s_list	*first_b;
+	struct s_list	*last_b;
 }				t_push;
-typedef struct	s_pile
+typedef struct	s_list
 {
 	int				value;
-	struct s_pile	*prev;
-	struct s_pile	*next;
-}				t_pile;
+	struct s_list	*prev;
+	struct s_list	*next;
+}				t_list;
 #endif
