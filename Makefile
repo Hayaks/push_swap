@@ -13,6 +13,7 @@ CHECK_OBJS		= $(CHECK_DIR:c=o)
 CC				= clang
 LIB				= ar -rcs
 CFLAGS 			= -Wall -Wextra -Werror
+FSAN			= -g3 -fsanitize=address
 RM				= rm -f
 
 all:			$(CHECK_NAME)
@@ -24,6 +25,13 @@ $(CHECK_NAME):	$(CHECK_OBJS)
 				make bonus -C libft
 				$(CC) $(CFLAGS) -o $(CHECK_NAME) $(CHECK_OBJS) $(LIBFT)
 
+fsan:			$(CHECK_OBJS)
+				make bonus -C libft
+				$(CC) $(CFLAGS) $(FSAN) -o $(CHECK_NAME) $(CHECK_OBJS) $(LIBFT)
+
+leaks:			$(CHECK_NAME)
+				valgrind --tool=memcheck --leak-check=full --leak-resolution=high --show-reachable=yes ./$(CHECK_NAME)
+
 clean:
 				make clean -C libft
 				$(RM) $(CHECK_OBJS)
@@ -34,4 +42,4 @@ fclean:			clean
 
 re:				fclean all
 
-.PHONY: all clean fclean re test norm
+.PHONY: all clean fclean re test fsan leaks

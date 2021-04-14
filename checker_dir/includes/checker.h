@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:59:57 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/14 11:25:05 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/14 15:08:03 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 //# include <string.h>
-//# include <stdio.h>
+# include <stdio.h>
 # include "../../libft/libft.h"
 
 typedef struct	s_push

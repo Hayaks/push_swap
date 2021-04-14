@@ -6,9 +6,11 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 10:19:45 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/14 11:19:41 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/14 15:08:36 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/checker.h"
 
 void	ft_begin_pile(t_push *push, char **av)
 {
