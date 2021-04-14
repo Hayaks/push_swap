@@ -2,9 +2,9 @@ CHECK_NAME		= checker
 
 CHECK_HEADER	= -I checker_dir/includes/ -I libft/
 
-LIBFT 			= -L libft/libft.a
+LIBFT 			= -L libft -lft
 
-CHECK_SRCS		= main.c ft_malloc_free.c ft_verif_info.c
+CHECK_SRCS		= main.c ft_verif_info.c ft_malloc_free.c ft_pile.c
 
 CHECK_DIR		= $(addprefix checker_dir/srcs/, $(CHECK_SRCS))
 
@@ -17,7 +17,7 @@ RM				= rm -f
 
 all:			$(CHECK_NAME)
 
-.c.o:
+%o: %.c
 				$(CC) $(CFLAGS) $(LIBFT) $(CHECK_HEADER) -c $< -o $@
 
 $(CHECK_NAME):	$(CHECK_OBJS)

@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:59:57 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/11 23:00:24 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/14 11:25:05 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,28 @@
 //# include <string.h>
 //# include <stdio.h>
 # include "../../libft/libft.h"
+
 typedef struct	s_push
 {
 	int				ac;
 	char			**av;
-	struct s_list	*first_a;
-	struct s_list	*last_a;
-	struct s_list	*first_b;
-	struct s_list	*last_b;
+	struct s_pile	*first_a;
+	struct s_pile	*last_a;
+	struct s_pile	*first_b;
+	struct s_pile	*last_b;
+	int				size_p;
 }				t_push;
-typedef struct	s_list
+
+typedef struct	s_pile
 {
 	int				value;
-	struct s_list	*prev;
-	struct s_list	*next;
-}				t_list;
+	struct s_pile	*prev;
+	struct s_pile	*next;
+}				t_pile;
+
+void			ft_verif_info(int ac, char **av);
+long int		ft_atoi_verif(const char *nbr);
+t_push  		*ft_malloc_push(int ac, char **av);
+void			ft_free_push(t_push *push);
+void			ft_begin_pile(t_push *push, char **av);
 #endif
