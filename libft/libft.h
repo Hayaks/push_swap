@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsaguez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 15:14:32 by jsaguez           #+#    #+#             */
-/*   Updated: 2019/12/13 13:41:18 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/15 14:26:09 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ t_list				*ft_lstlast(t_list *lst);
 void				ft_lstadd_back(t_list **alst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
+int					get_next_line(int fd, char **line);
 
 #	endif
