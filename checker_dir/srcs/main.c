@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 23:56:04 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/15 15:30:38 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/21 22:09:07 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 void	ft_get_instruction_bis(t_push *push, char *line)
 {
 	if (ft_strcmp(line, "rb") == 0)
-		rb;
+		ft_rotate(push->size_b, push->first_b, push->last_b);
 	else if (ft_strcmp(line, "rr") == 0)
 	{
-		ra;
-		rb;
+		ft_rotate(push->size_a, push->first_a, push->last_a);
+		ft_rotate(push->size_b, push->first_b, push->last_b);
 	}
 	else if (ft_strcmp(line, "rra") == 0)
-		rra;
+		ft_rotate_reverse(push->size_a, push->first_a, push->last_a);
 	else if (ft_strcmp(line, "rrb") == 0)
-		rrb;
+		ft_rotate_reverse(push->size_b, push->first_b, push->last_b);
 	else if (ft_strcmp(line, "rrr") == 0)
 	{
-		rra;
-		rrb;
+		ft_rotate_reverse(push->size_a, push->first_a, push->last_a);
+		ft_rotate_reverse(push->size_b, push->first_b, push->last_b);
 	}
 	else
 	{
@@ -48,24 +48,43 @@ void	ft_get_instruction(t_push *push)
 	while (get_next_line(0, &line) > 0)
 	{
 		if (ft_strcmp(line, "sa") == 0)
-			sa;
+			ft_swap(push->size_a, push->first_a);
 		else if (ft_strcmp(line, "sb") == 0)
-			sb;
+			ft_swap(push->size_b, push->first_b);
 		else if (ft_strcmp(line, "ss") == 0)
 		{
-			sa;
-			sb;
+			ft_swap(push->size_a, push->first_a);
+			ft_swap(push->size_b, push->first_b);
 		}
 		else if (ft_strcmp(line, "pa") == 0)
-			pa;
+			ft_push(push, 0);
 		else if (ft_strcmp(line, "pb") == 0)
-			pb;
+			ft_push(push, 1);
 		else if (ft_strcmp(line, "ra") == 0)
-			ra;
+			ft_rotate(push->size_a, push->first_a, push->last_a);
 		else
 			ft_get_instruction_bis(push, line);
 		free(line);
 		line = NULL;
+	}
+}
+
+void	ft_show(t_push *push)
+{
+	int		value;
+	t_pile	*pile;
+
+	pile = push->first_a;
+	while (pile)
+	{
+		value = pile->value;
+		pile = pile->next;
+	}
+	pile = push->first_b;
+	while (pile)
+	{
+		value = pile->value;
+		pile = pile->next;
 	}
 }
 
@@ -77,5 +96,6 @@ int		main(int ac, char **av)
 	push = ft_malloc_push(ac, av);
 	ft_begin_pile(push, av);
 	ft_get_instruction(push);
+	ft_show(push); //Verification des listes chainées
 	ft_free_push(push);
 }

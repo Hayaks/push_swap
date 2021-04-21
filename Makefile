@@ -4,7 +4,8 @@ CHECK_HEADER	= -I checker_dir/includes/ -I libft/
 
 LIBFT 			= -L libft -lft
 
-CHECK_SRCS		= main.c ft_verif_info.c ft_malloc_free.c ft_pile.c
+CHECK_SRCS		= main.c ft_verif_info.c ft_malloc_free.c ft_pile.c \
+					ft_instruction.c
 
 CHECK_DIR		= $(addprefix checker_dir/srcs/, $(CHECK_SRCS))
 

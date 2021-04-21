@@ -16,7 +16,7 @@ SRCS		= 	$(SRCSDIR)ft_atoi.c $(SRCSDIR)ft_isalnum.c $(SRCSDIR)ft_isalpha.c \
 			$(SRCSDIR)ft_strtrim.c $(SRCSDIR)ft_putchar_fd.c $(SRCSDIR)ft_putstr_fd.c \
 			$(SRCSDIR)ft_putendl_fd.c $(SRCSDIR)ft_putnbr_fd.c $(SRCSDIR)ft_itoa.c \
 			$(SRCSDIR)ft_strmapi.c $(SRCSDIR)ft_split.c $(SRCSDIR)ft_itoa_base.c \
-			$(SRCSDIR)get_next_line.c
+			$(SRCSDIR)get_next_line.c $(SRCSDIR)ft_strcmp.c
 
 SRCSBONUS	= $(BONUSDIR)ft_lstnew.c $(BONUSDIR)ft_lstadd_front.c $(BONUSDIR)ft_lstsize.c \
 			  $(BONUSDIR)ft_lstlast.c $(BONUSDIR)ft_lstadd_back.c $(BONUSDIR)ft_lstdelone.c \
