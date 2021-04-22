@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 23:56:04 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/22 13:28:23 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/22 13:43:42 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,14 +78,14 @@ void	ft_show(t_push *push)
 	while (pile)
 	{
 		value = pile->value;
-		printf("Value: %i \n", value);
+		printf("Value A: %i \n", value);
 		pile = pile->next;
 	}
 	pile = push->first_b;
 	while (pile)
 	{
 		value = pile->value;
-		printf("Value: %i \n", value);
+		printf("Value B: %i \n", value);
 		pile = pile->next;
 	}
 }

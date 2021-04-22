@@ -15,7 +15,7 @@
 void	ft_free_push(t_push *push)
 {
 	t_pile *tmp;
-	
+
 	while (push->first_a)
 	{
 		tmp = push->first_a->next;
@@ -38,7 +38,7 @@ void	ft_free_push(t_push *push)
 t_push	*ft_malloc_push(int ac, char **av)
 {
 	t_push	*push;
-	
+
 	push = NULL;
 	push = (t_push*)malloc(sizeof(t_push));
 	push->ac = ac;
