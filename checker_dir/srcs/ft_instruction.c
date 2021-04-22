@@ -6,31 +6,31 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:10:44 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/21 22:08:53 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/22 11:46:00 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-void	ft_push(t_push *push, int case)
+void	ft_push(t_push *push, int mod)
 {
 	t_pile	*tmp;
 	
 	tmp = NULL;
-	if ((case == 0 && push->size_b < 1)
-	|| (case == 1 && push->size_a < 1))
+	if ((mod == 0 && push->size_b < 1)
+	|| (mod == 1 && push->size_a < 1))
 		return ;
-	if (case == 0)
+	if (mod == 0)
 	{
 		tmp = push->first_b;
-		ft_delete_pile(push, tmp, case);
-		ft_add_pile(push, first_a, tmp, case);
+		ft_delete_pile(push, tmp, mod);
+		ft_add_pile(push, push->first_a, tmp, mod);
 	}
 	else
 	{
 		tmp = push->first_a;
-		ft_delete_pile(push, tmp, case);
-		ft_add_pile(push, first_b, tmp, case);
+		ft_delete_pile(push, tmp, mod);
+		ft_add_pile(push, push->first_b, tmp, mod);
 	}
 }
 

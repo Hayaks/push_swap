@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 23:15:46 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/21 19:36:09 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/22 11:45:00 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_free_push(t_push *push)
 	
 	while (push->first_a)
 	{
-		printf("Value: %i \n", push->first_a->value);
 		tmp = push->first_a->next;
 		free(push->first_a);
 		push->first_a = tmp;

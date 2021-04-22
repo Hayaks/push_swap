@@ -6,36 +6,40 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 10:19:45 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/21 15:42:30 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/22 12:56:11 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-void	ft_add_pile(t_push *push, t_pile *first, t_pile *pile, int case)
+void	ft_add_pile(t_push *push, t_pile *first, t_pile *pile, int mod)
 {
 	pile->next = first;
 	if (first != NULL)
 		first->prev = pile;
-	if (case == 0 && first == NULL)
+	if (mod == 0 && first == NULL)
 	{
 		push->first_a = pile;
 		push->last_a = pile;
 	}
-	else if (case == 1 && first == NULL)
+	else if (mod == 1 && first == NULL)
 	{
 		push->first_b = pile;
 		push->last_b = pile;
 	}
-	else if (case == 0 && first != NULL)
+	else if (mod == 0 && first != NULL)
 		push->first_a = pile;
-	else if (case == 1 && first != NULL)
+	else if (mod == 1 && first != NULL)
 		push->first_a = pile;
+	if (mod == 0)
+		push->size_a++;
+	else
+		push->size_b++;
 }
 
-void	ft_delete_pile(t_push *push, t_pile *pile, int case)
+void	ft_delete_pile(t_push *push, t_pile *pile, int mod)
 {
-	if (case == 0)
+	if (mod == 0)
 	{
 		push->first_b = pile->next;
 		push->size_b--;
