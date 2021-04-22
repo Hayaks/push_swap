@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 23:15:46 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/22 13:38:19 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/22 14:19:20 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	ft_free_push(t_push *push)
 {
-	t_pile *tmp;
+	t_pile	*tmp;
 
+	tmp = NULL;
 	while (push->first_a)
 	{
 		tmp = push->first_a->next;

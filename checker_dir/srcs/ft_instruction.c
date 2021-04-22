@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:10:44 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/22 13:43:56 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/22 14:19:44 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_push(t_push *push, int mod)
 {
 	t_pile	*tmp;
-	
+
 	tmp = NULL;
 	if ((mod == 0 && push->size_b < 1)
 	|| (mod == 1 && push->size_a < 1))
