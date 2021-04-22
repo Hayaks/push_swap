@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:59:57 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/21 22:22:24 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/22 15:09:06 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void			ft_add_pile(t_push *push, t_pile *first, t_pile *pile, int mod);
 void			ft_get_instruction(t_push *push);
 void			ft_get_instruction_bis(t_push *push, char *line);
 void			ft_swap(int i, t_pile *pile);
-void			ft_rotate(int i, t_pile *pile_begin, t_pile *pile_end);
+void			ft_rotate(t_push *push, int mod);
 void			ft_rotate_reverse(int i, t_pile *pile_begin, t_pile *pile_end);
 void			ft_push(t_push *push, int mod);
 void			ft_show(t_push *push);

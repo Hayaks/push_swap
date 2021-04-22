@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 10:19:45 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/22 12:56:11 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/22 15:14:30 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_add_pile(t_push *push, t_pile *first, t_pile *pile, int mod)
 	else if (mod == 0 && first != NULL)
 		push->first_a = pile;
 	else if (mod == 1 && first != NULL)
-		push->first_a = pile;
+		push->first_b = pile;
 	if (mod == 0)
 		push->size_a++;
 	else
