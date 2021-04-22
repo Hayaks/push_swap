@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 23:56:04 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/22 11:45:20 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/22 13:28:23 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_get_instruction_bis(t_push *push, char *line)
 {
-	if (ft_strcmp(line, "rb") == 0)
+	if (ft_strcmp(line, "ra") == 0)
+		ft_rotate(push->size_a, push->first_a, push->last_a);
+	else if (ft_strcmp(line, "rb") == 0)
 		ft_rotate(push->size_b, push->first_b, push->last_b);
 	else if (ft_strcmp(line, "rr") == 0)
 	{
@@ -35,7 +37,6 @@ void	ft_get_instruction_bis(t_push *push, char *line)
 		ft_putstr_fd("Error\n", 2);
 		ft_free_push(push);
 		free(line);
-		line = NULL;
 		exit(1);
 	}
 }
@@ -60,13 +61,12 @@ void	ft_get_instruction(t_push *push)
 			ft_push(push, 0);
 		else if (ft_strcmp(line, "pb") == 0)
 			ft_push(push, 1);
-		else if (ft_strcmp(line, "ra") == 0)
-			ft_rotate(push->size_a, push->first_a, push->last_a);
 		else
 			ft_get_instruction_bis(push, line);
 		free(line);
 		line = NULL;
 	}
+	free(line);
 }
 
 void	ft_show(t_push *push)
