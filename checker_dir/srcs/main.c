@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 23:56:04 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/22 15:18:29 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/22 17:38:22 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ void	ft_get_instruction_bis(t_push *push, char *line)
 		ft_rotate(push, 1);
 	}
 	else if (ft_strcmp(line, "rra") == 0)
-		ft_rotate_reverse(push->size_a, push->first_a, push->last_a);
+		ft_rotate_reverse(push, 0);
 	else if (ft_strcmp(line, "rrb") == 0)
-		ft_rotate_reverse(push->size_b, push->first_b, push->last_b);
+		ft_rotate_reverse(push, 1);
 	else if (ft_strcmp(line, "rrr") == 0)
 	{
-		ft_rotate_reverse(push->size_a, push->first_a, push->last_a);
-		ft_rotate_reverse(push->size_b, push->first_b, push->last_b);
+		ft_rotate_reverse(push, 0);
+		ft_rotate_reverse(push, 1);
 	}
 	else
 	{
@@ -92,6 +92,25 @@ void	ft_show(t_push *push)
 	printf("Size B: %i \n", push->size_b);
 }
 
+int		ft_tri(t_push *push)
+{
+	int		value;
+	t_pile	*pile;
+
+	pile = NULL;
+	if (push->size_b != 0)
+		return (0);
+	pile = push->first_a;
+	while (pile)
+	{
+		value = pile->value;
+		if (pile->next != NULL && value > pile->next->value)
+			return (0);
+		pile = pile->next;
+	}
+	return (1);
+}
+
 int		main(int ac, char **av)
 {
 	t_push	*push;
@@ -101,5 +120,9 @@ int		main(int ac, char **av)
 	ft_begin_pile(push, av);
 	ft_get_instruction(push);
 	ft_show(push); //Verification des listes chainées
+	if (ft_tri(push) == 1)
+		printf("OK\n");
+	else
+		printf("KO\n");
 	ft_free_push(push);
 }

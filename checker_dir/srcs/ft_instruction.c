@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:10:44 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/22 15:11:11 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/22 21:53:14 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,42 +34,55 @@ void	ft_push(t_push *push, int mod)
 	}
 }
 
-void	ft_rotate_reverse(int i, t_pile *pile_begin, t_pile *pile_end)
+void	ft_rotate_reverse(t_push *push, int mod)
 {
 	t_pile	*tmp;
 
-	if (i <= 1)
-		return ;
-	pile_end->prev->next = NULL;
-	tmp = pile_end->prev;
-	pile_begin->prev = pile_end;
-	pile_end->prev = NULL;
-	pile_end->next = pile_begin;
-	pile_begin = pile_end;
-	pile_end = tmp;
+	tmp = NULL;
+	if (mod == 0)
+	{
+		push->last_a->prev->next = NULL;
+		tmp = push->last_a->prev;
+		push->first_a->prev = push->last_a;
+		push->last_a->prev = NULL;
+		push->last_a->next = push->first_a;
+		push->first_a = push->last_a;
+		push->last_a = tmp;
+	}
+	else
+	{
+		push->last_b->prev->next = NULL;
+		tmp = push->last_b->prev;
+		push->first_b->prev = push->last_b;
+		push->last_b->prev = NULL;
+		push->last_b->next = push->first_b;
+		push->first_b = push->last_b;
+		push->last_b = tmp;
+	}
 }
 
 void	ft_rotate(t_push *push, int mod)
 {
 	t_pile	*tmp;
 
+	tmp = NULL;
 	if (mod == 0)
 	{
-		tmp = push->first_a->next;
 		push->first_a->next->prev = NULL;
+		tmp = push->first_a->next;
 		push->last_a->next = push->first_a;
-		push->first_a->prev = push->last_a;
 		push->first_a->next = NULL;
+		push->first_a->prev = push->last_a;
 		push->last_a = push->first_a;
 		push->first_a = tmp;
 	}
 	else
 	{
-		tmp = push->first_b->next;
 		push->first_b->next->prev = NULL;
+		tmp = push->first_b->next;
 		push->last_b->next = push->first_b;
-		push->first_b->prev = push->last_b;
 		push->first_b->next = NULL;
+		push->first_b->prev = push->last_b;
 		push->last_b = push->first_b;
 		push->first_b = tmp;
 	}
