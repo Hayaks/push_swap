@@ -1,15 +1,15 @@
 CHECK_NAME		= checker
 
-CHECK_HEADER	= -I checker_dir/includes/ -I libft/
+CHECK_HEADER	= -I checker_folder/includes/ -I libft/
 
 LIBFT 			= -L libft -lft
 
 CHECK_SRCS		= main.c ft_verif_info.c ft_malloc_free.c ft_pile.c \
 					ft_instruction.c
 
-CHECK_DIR		= $(addprefix checker_dir/srcs/, $(CHECK_SRCS))
+CHECK_FOLDER	= $(addprefix checker_folder/srcs/, $(CHECK_SRCS))
 
-CHECK_OBJS		= $(CHECK_DIR:c=o)
+CHECK_OBJS		= $(CHECK_FOLDER:c=o)
 
 CC				= clang
 LIB				= ar -rcs
