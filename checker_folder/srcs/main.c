@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 23:56:04 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/26 16:12:20 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/26 17:10:10 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ int		main(int ac, char **av)
 	push = ft_malloc_push(ac, av);
 	ft_begin_pile(push, av);
 	ft_get_instruction(push);
-	ft_show(push); //Verification des listes chainées
+	//ft_show(push); //Verification des listes chainées
 	if (ft_tri(push) == 1 && push->size_b <= 0)
 		printf("OK\n");
 	else

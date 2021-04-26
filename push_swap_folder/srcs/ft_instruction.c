@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:10:44 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/26 16:54:19 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/26 17:24:36 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	ft_rotate_reverse(t_push *push, int mod)
 		push->last_a->next = push->first_a;
 		push->first_a = push->last_a;
 		push->last_a = tmp;
+		printf("rra\n");
 	}
 	else
 	{
@@ -62,11 +63,8 @@ void	ft_rotate_reverse(t_push *push, int mod)
 		push->last_b->next = push->first_b;
 		push->first_b = push->last_b;
 		push->last_b = tmp;
-	}
-	if (mod == 0)
-		printf("rra\n");
-	else
 		printf("rrb\n");
+	}
 }
 
 void	ft_rotate(t_push *push, int mod)
@@ -83,6 +81,7 @@ void	ft_rotate(t_push *push, int mod)
 		push->first_a->prev = push->last_a;
 		push->last_a = push->first_a;
 		push->first_a = tmp;
+		printf("ra\n");
 	}
 	else
 	{
@@ -93,11 +92,8 @@ void	ft_rotate(t_push *push, int mod)
 		push->first_b->prev = push->last_b;
 		push->last_b = push->first_b;
 		push->first_b = tmp;
-	}
-	if (mod == 0)
-		printf("ra\n");
-	else
 		printf("rb\n");
+	}
 }
 
 void	ft_swap(int i, t_pile *pile, int mod)
