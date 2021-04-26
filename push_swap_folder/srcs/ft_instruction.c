@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:10:44 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/25 14:24:47 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/26 16:54:19 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ void	ft_push(t_push *push, int mod)
 		ft_delete_pile(push, tmp, mod);
 		ft_add_pile(push, push->first_b, tmp, mod);
 	}
+	if (mod == 0)
+		printf("pa\n");
+	else
+		printf("pb\n");
 }
 
 void	ft_rotate_reverse(t_push *push, int mod)
@@ -59,6 +63,10 @@ void	ft_rotate_reverse(t_push *push, int mod)
 		push->first_b = push->last_b;
 		push->last_b = tmp;
 	}
+	if (mod == 0)
+		printf("rra\n");
+	else
+		printf("rrb\n");
 }
 
 void	ft_rotate(t_push *push, int mod)
@@ -86,9 +94,13 @@ void	ft_rotate(t_push *push, int mod)
 		push->last_b = push->first_b;
 		push->first_b = tmp;
 	}
+	if (mod == 0)
+		printf("ra\n");
+	else
+		printf("rb\n");
 }
 
-void	ft_swap(int i, t_pile *pile)
+void	ft_swap(int i, t_pile *pile, int mod)
 {
 	int	tmp;
 
@@ -97,4 +109,8 @@ void	ft_swap(int i, t_pile *pile)
 	tmp = pile->value;
 	pile->value = pile->next->value;
 	pile->next->value = tmp;
+	if (mod == 0)
+		printf("sa\n");
+	else
+		printf("sb\n");
 }

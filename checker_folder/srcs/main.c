@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 23:56:04 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/22 17:38:22 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/26 16:12:20 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,6 @@ int		ft_tri(t_push *push)
 	t_pile	*pile;
 
 	pile = NULL;
-	if (push->size_b != 0)
-		return (0);
 	pile = push->first_a;
 	while (pile)
 	{
@@ -120,7 +118,7 @@ int		main(int ac, char **av)
 	ft_begin_pile(push, av);
 	ft_get_instruction(push);
 	ft_show(push); //Verification des listes chainées
-	if (ft_tri(push) == 1)
+	if (ft_tri(push) == 1 && push->size_b <= 0)
 		printf("OK\n");
 	else
 		printf("KO\n");

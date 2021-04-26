@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 14:14:06 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/25 14:24:20 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/26 16:51:51 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ typedef struct	s_push
 	struct s_pile	*last_b;
 	int				size_a;
 	int				size_b;
+	int				min_a;
+	int				max_a;
+	int				min_b;
+	int				max_b;
 }				t_push;
 
 typedef struct	s_pile
@@ -44,9 +48,13 @@ void			ft_begin_pile(t_push *push, char **av);
 void			ft_delete_pile(t_push *push, t_pile *pile, int mod);
 void			ft_add_pile(t_push *push, t_pile *first, t_pile *pile, int mod);
 int				ft_tri(t_push *push);
-void			ft_swap(int i, t_pile *pile);
+void			ft_swap(int i, t_pile *pile, int mod);
 void			ft_rotate(t_push *push, int mod);
 void			ft_rotate_reverse(t_push *push, int mod);
 void			ft_push(t_push *push, int mod);
-void			ft_show(t_push *push);
+int				ft_small_index(t_pile *pile);
+int				ft_big_index(t_pile *pile);
+void			ft_little_tri(t_push *push);
+void			ft_three(t_push *push);
+void			ft_show(t_push *push); //Ne pas oublier
 #endif

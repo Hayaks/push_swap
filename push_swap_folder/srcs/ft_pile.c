@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 10:19:45 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/25 14:24:58 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/26 11:32:56 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,6 @@ void	ft_begin_pile(t_push *push, char **av)
 		pile1 = pile1->prev;
 	push->first_a = pile1;
 	push->size_a = i - 1;
+	push->min_a = ft_small_index(push->first_a);
+	push->max_a = ft_big_index(push->first_a);
 }
