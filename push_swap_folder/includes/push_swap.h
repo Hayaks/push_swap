@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 14:14:06 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/26 16:51:51 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/28 21:39:13 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct	s_push
 	int				max_a;
 	int				min_b;
 	int				max_b;
+	int				*all_nbr;
 }				t_push;
 
 typedef struct	s_pile
@@ -54,7 +55,9 @@ void			ft_rotate_reverse(t_push *push, int mod);
 void			ft_push(t_push *push, int mod);
 int				ft_small_index(t_pile *pile);
 int				ft_big_index(t_pile *pile);
+void			ft_add_tab(t_push *push);
 void			ft_little_tri(t_push *push);
+int				ft_small_index_tab(t_pile *pile, int limit, int position);
 void			ft_three(t_push *push);
 void			ft_show(t_push *push); //Ne pas oublier
 #endif

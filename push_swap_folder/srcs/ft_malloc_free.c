@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 23:15:46 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/26 11:33:05 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/04/28 17:48:35 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ t_push	*ft_malloc_push(int ac, char **av)
 	push->max_a = -1;
 	push->min_b = -1;
 	push->max_b = -1;
+	push->all_nbr = NULL;
 	return (push);
 }
