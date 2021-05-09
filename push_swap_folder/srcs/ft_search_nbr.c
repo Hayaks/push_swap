@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 17:23:03 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/05/09 20:55:44 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/05/09 21:12:32 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,16 @@ int		ft_start_or_end(t_push *push, int i)
 	end = -1;
 	j = 0;
 	tmp = push->first_a;
-	while (tmp && start == -1 && j < (push->size_a / 2) + 1)
+	while (tmp && start == -1)
 	{
 		if (ft_equal(push, (i - i % 10) / 10, tmp->value) == 1)
 			start = j;
 		j++;
 		tmp = tmp->next;
 	}
-	j = 1;
+	j = 0;
 	tmp = push->last_a;
-	while (tmp && end == -1 && j < (push->size_a / 2) + 1)
+	while (tmp && end == -1)
 	{
 		if (ft_equal(push, (i - i % 10) / 10, tmp->value) == 1)
 			end = j;
