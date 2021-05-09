@@ -6,11 +6,25 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 10:47:34 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/29 11:45:51 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/05/09 17:31:19 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int		ft_equal(t_push *push, int group, int nbr)
+{
+	int	i;
+
+	i = 0;
+	while (i < 10)
+	{
+		if (push->all_nbr[i + (10 * group)] == nbr)
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 int		ft_small_index_tab(t_pile *pile, int limit, int position)
 {
@@ -31,7 +45,6 @@ int		ft_small_index_tab(t_pile *pile, int limit, int position)
 		i++;
 	}
 	return (value_min);
-	//refaire ça
 }
 
 void	ft_add_tab(t_push *push)

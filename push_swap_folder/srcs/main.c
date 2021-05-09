@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 23:56:04 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/28 21:04:11 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/05/09 17:18:36 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int		main(int ac, char **av)
 	else if (ft_tri(push) == 0 && push->size_a >= 30)
 	{
 		ft_add_tab(push);
-		//ft_big_tri(push);
+		ft_big_tri(push);
 		free(push->all_nbr);
 	}
 	//ft_show(push); //Verification des listes chainées

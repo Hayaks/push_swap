@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 14:14:06 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/04/28 21:39:13 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/05/09 17:12:36 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,11 @@ int				ft_big_index(t_pile *pile);
 void			ft_add_tab(t_push *push);
 void			ft_little_tri(t_push *push);
 int				ft_small_index_tab(t_pile *pile, int limit, int position);
+int				ft_equal(t_push *push, int group, int nbr);
 void			ft_three(t_push *push);
+void			ft_big_tri(t_push *push);
+void			ft_search_nbr(t_push *push, int i);
+int				ft_start_or_end(t_push *push, int i);
+void			ft_push_high(t_push *push);
 void			ft_show(t_push *push); //Ne pas oublier
 #endif

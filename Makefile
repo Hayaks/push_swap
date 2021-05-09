@@ -12,7 +12,8 @@ CHECK_SRCS		= main.c ft_verif_info.c ft_malloc_free.c ft_pile.c \
 					ft_instruction.c
 
 PUSH_SRCS		= main.c ft_verif_info.c ft_malloc_free.c ft_pile.c \
-					ft_instruction.c ft_utils.c ft_little_tri.c
+					ft_instruction.c ft_utils.c ft_little_tri.c \
+					ft_big_tri.c ft_search_nbr.c
 
 CHECK_FOLDER	= $(addprefix checker_folder/srcs/, $(CHECK_SRCS))
 
