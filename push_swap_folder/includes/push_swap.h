@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 14:14:06 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/05/09 17:12:36 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/05/11 19:04:59 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ typedef struct	s_push
 	int				min_b;
 	int				max_b;
 	int				*all_nbr;
+	int				nb_list;
+	int				group;
+	int				size_all;
 }				t_push;
 
 typedef struct	s_pile
@@ -58,7 +61,7 @@ int				ft_big_index(t_pile *pile);
 void			ft_add_tab(t_push *push);
 void			ft_little_tri(t_push *push);
 int				ft_small_index_tab(t_pile *pile, int limit, int position);
-int				ft_equal(t_push *push, int group, int nbr);
+int				ft_equal(t_push *push, int x, int nbr);
 void			ft_three(t_push *push);
 void			ft_big_tri(t_push *push);
 void			ft_search_nbr(t_push *push, int i);

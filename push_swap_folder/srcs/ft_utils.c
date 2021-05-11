@@ -6,20 +6,20 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 10:47:34 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/05/09 20:22:56 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/05/11 15:43:45 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int		ft_equal(t_push *push, int group, int nbr)
+int		ft_equal(t_push *push, int x, int nbr)
 {
 	int	i;
 
 	i = 0;
-	while (i < 10)
+	while (i < push->group)
 	{
-		if (push->all_nbr[i + (10 * group)] == nbr)
+		if (push->all_nbr[i + (push->group * x)] == nbr)
 			return (1);
 		i++;
 	}
@@ -59,7 +59,6 @@ void	ft_add_tab(t_push *push)
 	{
 		tmp = ft_small_index_tab(push->first_a, tmp, i);
 		push->all_nbr[i] = tmp;
-		printf("Tab: %i \n", tmp);
 		i++;
 	}
 	push->all_nbr[i] = '\0';	
