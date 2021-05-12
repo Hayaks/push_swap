@@ -56,7 +56,7 @@ t_push	*ft_malloc_push(int ac, char **av)
 	push->max_b = -1;
 	push->all_nbr = NULL;
 	push->nb_list = 0;
-	push->group = 0;
+	push->x = 0;
 	push->size_all = 0;
 	return (push);
 }

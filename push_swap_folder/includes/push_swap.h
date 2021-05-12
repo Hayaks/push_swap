@@ -33,7 +33,7 @@ typedef struct	s_push
 	int				max_b;
 	int				*all_nbr;
 	int				nb_list;
-	int				group;
+	int				x;
 	int				size_all;
 }				t_push;
 
@@ -65,7 +65,8 @@ int				ft_equal(t_push *push, int x, int nbr);
 void			ft_three(t_push *push);
 void			ft_big_tri(t_push *push);
 void			ft_search_nbr(t_push *push, int i);
-int				ft_start_or_end(t_push *push, int i);
+int				ft_start_or_end(t_push *push, int j, int nbr);
 void			ft_push_high(t_push *push);
+void			ft_ope_high(t_push *push, int j, int min);
 void			ft_show(t_push *push); //Ne pas oublier
 #endif

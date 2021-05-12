@@ -22,7 +22,7 @@ void	ft_big_tri(t_push *push)
 		push->nb_list = 12;
 	i = 0;
 	push->size_all = push->size_a;
-	push->group = (push->size_all - push->size_all % 10) / push->nb_list;
+	push->x = (push->size_all - push->size_all % 10) / push->nb_list;
 	while (i != (push->size_all - push->size_all % 10))
 	{
 		ft_search_nbr(push, i);

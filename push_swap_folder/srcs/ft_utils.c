@@ -17,9 +17,9 @@ int		ft_equal(t_push *push, int x, int nbr)
 	int	i;
 
 	i = 0;
-	while (i < push->group)
+	while (i < push->x)
 	{
-		if (push->all_nbr[i + (push->group * x)] == nbr)
+		if (push->all_nbr[i + (push->x * x)] == nbr)
 			return (1);
 		i++;
 	}
@@ -55,13 +55,13 @@ void	ft_add_tab(t_push *push)
 	i = 0;
 	tmp = 0;
 	push->all_nbr = malloc(sizeof(int) * push->size_a + 1);
-	while(i < push->size_a)
+	while (i < push->size_a)
 	{
 		tmp = ft_small_index_tab(push->first_a, tmp, i);
 		push->all_nbr[i] = tmp;
 		i++;
 	}
-	push->all_nbr[i] = '\0';	
+	push->all_nbr[i] = '\0';
 }
 
 int		ft_big_index(t_pile *pile)
