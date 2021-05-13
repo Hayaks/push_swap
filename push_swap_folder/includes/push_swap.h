@@ -6,7 +6,7 @@
 /*   By: jsaguez <jsaguez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 14:14:06 by jsaguez           #+#    #+#             */
-/*   Updated: 2021/05/11 19:04:59 by jsaguez          ###   ########.fr       */
+/*   Updated: 2021/05/13 15:42:12 by jsaguez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ typedef struct	s_pile
 
 void			ft_verif_info(int ac, char **av);
 long int		ft_atoi_verif(const char *nbr);
-t_push  		*ft_malloc_push(int ac, char **av);
+t_push			*ft_malloc_push(int ac, char **av);
 void			ft_free_push(t_push *push);
 void			ft_begin_pile(t_push *push, char **av);
 void			ft_delete_pile(t_push *push, t_pile *pile, int mod);
@@ -68,5 +68,4 @@ void			ft_search_nbr(t_push *push, int i);
 int				ft_start_or_end(t_push *push, int j, int nbr);
 void			ft_push_high(t_push *push);
 void			ft_ope_high(t_push *push, int j, int min);
-void			ft_show(t_push *push); //Ne pas oublier
 #endif
